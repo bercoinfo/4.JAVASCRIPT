@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays y bucles for</title>
+
+</head>
+
+<body>
+    <button onclick="alineacion()">Alineacion</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="tablaMultiplicar()">Tabla de Multiplicar</button>
+    <button onclick="imprime_alineacion()">Imprimir Alineación</button>
+
+
+
+    <script>
+        function alineacion() {
+            let alineacion = ['Benzema', 'Bale', 'Hazard', 'Asensio', 'Vinicius'];
+            let posicion = prompt("Dime posicion:")
+            alert(alineacion[posicion]);
+
+        }
+        function factorial() {
+            let numero = parseInt(prompt("Dime un número"));
+            let factorial = 1;
+            for (let i = 1; i <= numero; i++) {
+                factorial *= i;
+            }
+            alert("El factorial de " + numero + " es: " + factorial);
+
+        }
+        function tablaMultiplicar() {
+            let numero = parseInt(prompt("Dime un número y hallo su tabla de multiplicar"));
+            document.write("<h1>Table del " + numero + "</h1>");
+            document.write("<table>");
+            for (let i = 1; i <= 10; i++) {
+                document.write("<tr><td>" + numero + " x " + i +"</td><td>" + " = " + (numero * i) + "</td></tr>");
+            }
+            document.write("</table>");
+
+        }
+        function imprime_alineacion() {
+            let alineacion = ['Benzema', 'Bale', 'Hazard', 'Asensio', 'Vinicius'];
+            alineacion[4]="Casemiro";
+            for (let i=0; i< alineacion.length; i++){
+                document.write(i + "." + alineacion[i] + "<br>");
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

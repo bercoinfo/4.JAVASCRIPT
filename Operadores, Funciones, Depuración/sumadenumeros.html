@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de numeros</title>
+</head>
+<body>
+
+ <script>
+    function sumarNumeros(){
+let numero1 = parseInt(prompt("dime un número"));
+    let numero2 = parseInt(prompt("dime otro número"));
+    let suma = numero1 + numero2;
+    //let suna = numero1 + numero2;
+    alert("La suma de " + numero1 + " y de "+ numero2 + " es de: " + suma);
+    }
+    function parImpar(num){
+        if (num % 2 == 0) {
+            return "par";
+        } else {
+            return "impar";
+        }
+    }
+    function diceImpar(){
+        let numero = parseInt(prompt("dime un número"));
+        let resultado = parImpar(numero);
+        alert("El numero" + numero + " es " + resultado);
+    }
+ </script>   
+
+ <button onclick="sumarNumeros()">Sumar Números</button>
+
+ <button onclick="diceImpar()">Decir si es par o impar</button>
+</body>
+</html>
