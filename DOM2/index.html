@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM y java</title>
+    <style>
+        #caja {border: 1px solid blue; 
+            width: 200px;
+            padding: 20px;}
+
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Titulo Inicial</h1>
+    <div id="caja">Contenido Caja</div>
+    <button onclick="cambiaTitulo()">Cambiar titulo</button> <br>
+    <button onclick="cambiaCaja()">CAmbia tamaño de caja</button>
+    <br>
+    <img id="imagen" src="./img/molino.jpg" width="200" height="300" alt="">
+    <br>
+    <button onclick="cambiaAnchoImagen()">Cambia tamaño de imagen</button>
+    <button onclick="cambiaSrc()">Cambia de imagen</button>
+    <br>
+    
+ 
+ <script>
+function cambiaTitulo(){
+
+    var titulo = document.getElementById("titulo");
+    if(titulo.innerHTML == "Titulo Inicial"){
+        titulo.innerHTML = "Nuevo titulo";
+    } else {
+        titulo.innerHTML = "Titulo Inicial";
+    }
+    document.getElementById("caja").innerHTML ="Nuevo contenido";
+}
+function cambiaAnchoImagen(){
+    var imagen = document.getElementById("imagen");
+    imagen.width = imagen.width +100;
+
+}
+function cambiaSrc(){
+    document.getElementById("imagen").src = "./img/quijote.jpg";
+}
+function cambiaCaja(){
+    var caja  = document.getElementById("caja");
+    caja.style.width = "500px";
+    caja.style.backgroundColor = "lightgreen";
+    caja.style.fontSize = "50px";
+    caja.style.color = "red";
+}
+
+</script>  
+</body>
+</html>
