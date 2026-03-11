@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Media</title>
+</head>
+
+<body>
+    <button onclick="notaMedia()">Calcular Nota Media</button>
+    <button onclick="notasMediaIndicada()">Idica notas</button>
+
+    <script>
+        function notasMediaIndicada(){
+            let nNotas = parseInt(prompt("Dime cuantas notas vamos a valorar"));
+            let sumaNotas = 0;
+            let media = 0;
+            for( let i = 0; i <=nNotas; i++) {
+                let nota = parseInt(prompt("Indica la nota "+i));
+                sumaNotas = nota +sumaNotas;
+            }
+            
+            media = sumaNotas/nNotas;
+            alert("La nota Media es "+ media)
+        }
+
+
+        function notaMedia() {
+            let nota1 = parseInt(prompt("Dime la primera nota:"));
+            let nota2 = parseInt(prompt("Dime la segunda nota:"));
+            let nota3 = parseInt(prompt("Dime la tercera nota:"));
+            let notas = [nota1, nota2, nota3];
+            let media = 0;
+
+
+            for (let i = 0; i < notas.length; i++) {
+                let suma = notas[i] + media;
+                media = suma;
+            }
+            media = media / notas.length;
+            alert("La nota media de " + nota1 + ", " + nota2 + " y " + nota3 + " es: " + media);
+        }
+    </script>
+</body>
+
+</html>
