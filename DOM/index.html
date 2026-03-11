@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM y java</title>
+    <style>
+        #caja {border: 1px solid blue; padding: 20px;}
+
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Titulo Inicial</h1>
+    <div id="caja">Contenido Caja</div>
+    <button onclick="cambiaTitulo()">Cambiar titulo</button>
+
+ <script>
+function cambiaTitulo(){
+
+    var titulo = document.getElementById("titulo");
+    if(titulo.innerHTML == "Titulo Inicial"){
+        titulo.innerHTML = "Nuevo titulo";
+    } else {
+        titulo.innerHTML = "Titulo Inicial";
+    }
+    document.getElementById("caja").innerHTML ="Nuevo contenido";
+}
+
+</script>  
+</body>
+</html>
