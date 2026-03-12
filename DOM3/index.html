@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript y el DOM 2ª Parte</title>
+    <style>
+        .importante {background-color: red;
+            color: yellow;
+            font-size: 30px ;}
+        .permitido {background-color: blue;
+            color: yellow;
+            font-size: 30px ;}
+    </style>
+</head>
+<body>
+   <h1 id="titulo">Titulo inicial</h1>
+    <button onclick="aplicaClase()">Aplicar clase</button>
+
+<script>
+/*
+let nombre  = prompt("Dime tu nombre");
+let edad = prompt("Dime tu edad");
+    if(edad< 18){
+         //document.write("<h1>Hola "+ nombre + " No tienes acceso al se menor de edad"+"</h1>");
+          document.getElementById("titulo").className="importante";
+    } else {
+        //document.write("<h1>Hola "+ nombre + " Tienes acceso al se menor de edad"+"</h1>");
+        document.getElementById("titulo").className="permitido";
+    }
+  */ 
+
+ function aplicaClase(){
+    document.getElementById("titulo").className="importante";
+ }
+</script>
+</body>
+</html>
