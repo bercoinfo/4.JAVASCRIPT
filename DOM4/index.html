@@ -18,12 +18,13 @@
             <option value="gu">Guadalajara</option>
          </select>
     <br>
-    <img id="imagen" src="" width="400" height="400">
+    <img style="visibility: hidden;" id="imagen" src="" width="400" height="400">
     </form>
     <script>
         function cambiaImagen(){
             let provincia = document.getElementById("provincia");
             let imagen = document.getElementById("imagen");
+            imagen.style.visibility = "visible";
             if (provincia.value == "cr"){
                 imagen.src = "./img/CR.jpg"
             }
@@ -41,6 +42,7 @@
             }
              if (provincia.value == "no seleccionado"){
                 imagen.src = ""
+                imagen.style.visibility = "hidden";
             }
 
         }
