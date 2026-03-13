@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Provincias</title>
+</head>
+<body>
+    <h1>Castilla la Mancha</h1>
+    <form>
+        <label for="provincia">Provincia</label>
+        <select name="provincia" id="provincia" onchange="cambiaImagen()">
+            <option value="no seleccionado">Seleccione.....</option>
+            <option value="cr">Ciudad Real</option>
+            <option value="ab">Albacete</option>
+            <option value="cu">Cuenca</option>
+            <option value="to">Toledo</option>
+            <option value="gu">Guadalajara</option>
+         </select>
+    <br>
+    <img id="imagen" src="" width="400" height="400">
+    </form>
+    <script>
+        function cambiaImagen(){
+            let provincia = document.getElementById("provincia");
+            let imagen = document.getElementById("imagen");
+            if (provincia.value == "cr"){
+                imagen.src = "./img/CR.jpg"
+            }
+             if (provincia.value == "ab"){
+                imagen.src = "./img/Albacete.webp"
+            }
+              if (provincia.value == "cu"){
+                imagen.src = "./img/cuenca.webp"
+            }
+              if (provincia.value == "to"){
+                imagen.src = "./img/Toledo.webp"
+            }
+              if (provincia.value == "gu"){
+                imagen.src = "./img/guadalajara.webp"
+            }
+
+        }
+    </script>
+</body>
+</html>
