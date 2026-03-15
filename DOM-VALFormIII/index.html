@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial;
+            box-sizing: border-box;
+        }
+
+        #Titulo {
+            text-align: center
+        }
+
+        #aviso {
+            color: red;
+            font-size: 20px;
+            text-align: center;
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #capaformulario {
+            height: auto;
+            background-color: grey;
+            border-radius: 15px;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        label {
+            color: white;
+            display: inline-block;
+            width: 30%;
+        }
+
+        input {
+            width: 70%;
+            height: 25px;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="Titulo">Formulario de Inscripcion </h1>
+
+    <div id="capaformulario">
+        <form action="procesa.php" onsubmit="return validaFormulario()">
+            <label for="nombre">Nombre</label> <input type="text" name="nombre" id="nombre"><br>
+            <label for="fecha">Fecha de Inscripcion</label> <input type="date" name="fecha" id="fecha">
+            <div style="text-align: center; margin-top: 20px">
+                <input type="submit" name="submit" id="submit">
+            </div>
+        </form>
+    </div>
+    <h6 id="aviso"></h6>
+
+    <script>
+        function validaFormulario() {
+            let aviso = document.getElementById("aviso");
+            aviso.innerHTML = "";
+            let nombre = document.getElementById("nombre");
+            
+            if (nombre.value.length == 0) {
+                aviso.innerHTML = "El nombre no puede estar vacio";
+                nombre.focus();
+                return false;
+            }
+            let fecha = document.getElementById("fecha");
+            //alert(fecha.value);
+            
+            if (fecha.value.length == 0) {
+                aviso.innerHTML = "Debe seleccionar una fecha";
+                fecha.focus();
+                return false;
+            }
+            let hoy = new Date();
+            //Elimino el tiempo y dejo solo la fecha
+            hoy.setHours(0, 0, 0, 0);
+            
+             // No puedo comparar fechas con fecha.value ya que es un string, he de comertirlo en un campo fecha para comparar los dos objetos igual
+             let fechaSeleccionada = new Date(fecha.value);
+             fechaSeleccionada.setHours(0, 0, 0, 0);
+             alert(hoy.toDateString()); //combierto el date en String para mostarlo
+            if(fechaSeleccionada < hoy){
+                aviso.innerHTML = "Las fecha no peude se inferior al dia " +hoy.toDateString()
+                fecha.focus;
+                return false;
+            }
+
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
