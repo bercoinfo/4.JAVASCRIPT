@@ -80,9 +80,20 @@
                 fecha.focus();
                 return false;
             }
+            let fechaHoy = new Date();
+            let fechaHoyStr = fechaHoy.toISOString();
+            fechaHoyStr = fechaHoyStr.slice(0,10);
+            //alert("La fecha de hoy es: "+fechaHoyStr);
+            //alert("La fecha de seleccionada es: "+ fecha.value);
+            //Elimino el tiempo y dejo solo la fecha
+            //hoy.setHours(0, 0, 0, 0);
             
-            if(fecha.value < "2026-03-14"){
-                aviso.innerHTML = "Las fecha no peude se inferior al dia 2026-03-14" 
+             // No puedo comparar fechas con fecha.value ya que es un string, he de comertirlo en un campo fecha para comparar los dos objetos igual
+            // let fechaSeleccionada = new Date(fecha.value);
+            // fechaSeleccionada.setHours(0, 0, 0, 0);
+            // alert(hoy.toDateString()); //combierto el date en String para mostarlo
+            if(fecha.value < fechaHoyStr){
+                aviso.innerHTML = "Las fecha no peude se inferior al dia " +fechaHoyStr;
                 fecha.focus;
                 return false;
             }
