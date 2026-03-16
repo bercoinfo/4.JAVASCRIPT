@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepasoII</title>
+    <style>
+        img {width: 200px; height: 200px;}
+        .importante {color: blue; background-color: lightblue;}
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">Titulo</h1>
+    <h1 id="titulo2">Titulo</h1>
+    <p>Usuario: <input type="text" name="pepe" id="usuario"></p>
+    <img id="imagen" src="https://consuegra.es/media/cache/content/uploads/images/cresteriaocre-5f3e4a4a74cc2.jpeg">
+
+    <button onclick="cambiaTitulo()">Cambia Titulo</button>
+    <button onclick="cambiaImagen()">Cambia Imagen</button>
+    <button onclick="cambiaValor()">Cambia Valor</button>
+    <button onclick="cambiaColor()">Cambia Color</button>
+    <button onclick="ocultaImagen()">Oculta Imagen</button>
+    <button onclick="aplicaClase()">Aplica Clase</button>
+    <button onclick="nuevoHtml()">Nuevo Html</button>
+    <p>Idioma: <select id="idioma" onchange="cambiaIdioma()">
+            <option value="es">Español</option>
+            <option value="en">Ingles</option>
+        </select>
+    </p>
+
+    <script>
+        /**** prpiedad innenHTML ****/
+function cambiaTitulo(){
+    let titulo = document.getElementById("titulo");
+    titulo.innerHTML = "Titulo nuevo"
+}
+/**** cambia imagen */
+function cambiaImagen(){
+    document.getElementById("imagen").src= "https://www.aboutespanol.com/thmb/TPmBdfKDB5MbvsnzTntSG2Jfe5w=/3872x2395/filters:fill(auto,1)/Molinodevientodetrigo-0bd3a2da1d6243a385f163a2685c3cd0.jpg";
+}
+function cambiaValor(){
+    document.getElementById("usuario").value="admin";
+}
+/** propiedad css (se pone .style ) **/
+function cambiaColor(){
+    let titulo=document.getElementById("titulo");
+    titulo.style.color = "red";
+    titulo.style.backgroundColor = "yelow";
+    titulo.style.fontSize = "4em";
+    titulo.style.border = "2px solid red";
+}
+function ocultaImagen(){
+    document.getElementById("imagen").style.display = "none";
+}
+function aplicaClase(){
+    let titulo= document.getElementById("titulo2");
+    titulo.className = "importante";
+}
+function nuevoHtml(){
+    document.write("<h1>Nuevo HTML</h1>")
+}
+function cambiaIdioma(){
+    let miSelect = document.getElementById("idioma");
+    let titulo = document.getElementById("titulo");
+    if(miSelect.value == "en"){
+        titulo.innerHTML = "New Title";
+    } else {
+        titulo.innerHTML = "Nuevo Titulo";
+    }
+
+}
+    </script>
+
+</body>
+
+</html>
