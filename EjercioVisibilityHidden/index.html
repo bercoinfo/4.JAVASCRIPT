@@ -8,8 +8,14 @@
 <body>
     <h1>Castilla la Mancha</h1>
     <form>
-      
-       
+        <label for="pais">Pais</label>
+        <select name="pais" id="pais" onchange="VerProvincias()">
+            <option value="no">Seleccione.....</option>
+            <option value="es">España</option>
+            <option value="it">Italia</option>
+            <option value="fr">Francia</option>
+        </select>
+        <div id="prov" style="visibility: hidden;">
         <label for="provincia">Provincia</label>
         <select  name="provincia" id="provincia" onchange="cambiaImagen()">
             <option value="no seleccionado">Seleccione.....</option>
@@ -19,12 +25,23 @@
             <option value="to">Toledo</option>
             <option value="gu">Guadalajara</option>
          </select>
-        
+         </div>
     <br>
     <img style="visibility: hidden;" id="imagen" src="" width="400" height="400">
     </form>
     <script>
-       
+        function VerProvincias(){
+            let pais = document.getElementById("pais");
+            let prov = document.getElementById("prov");
+            let imagen = document.getElementById("imagen");
+
+            if (pais.value == 'es'){
+                prov.style.visibility = "Visible";
+            } else {
+                prov.style.visibility = "hidden";
+                imagen.style.visibility = "hidden";
+            }
+        }
         function cambiaImagen(){
             let provincia = document.getElementById("provincia");
             let imagen = document.getElementById("imagen");
