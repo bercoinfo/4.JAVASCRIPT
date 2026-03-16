@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepasoI JavaScript</title>
+</head>
+<body>
+    <button onclick="acceso()">Pregunta edad</button>
+    <button onclick="suma()">Suma</button>
+    <button onclick="login()">Login</button>
+    <button onclick="calculaDoble()">Doble</button>
+    <button onclick="alineacion()">Alineacion</button>
+    <button onclick="sumaHasta()">Suma n primeros numeros</button>
+
+
+<script>
+    /************************************************/
+    /* acceso(): alert y prom, let, if              */
+    /************************************************/
+
+    function acceso(){
+        let edad = prompt("dime la edad");
+        if(edad < 18){
+            alert("No puedes entrar");
+        } else {
+            alert("Bienvenid@ a mi pagina");
+        }
+    }
+    /************************************************/
+    /*           suma(): alert y prom, +            */
+    /************************************************/
+    function suma(){
+        let n1 = prompt("dime el primer numero");
+        let n2 = prompt("dime el segundo numero");
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+        let suma = n1+n2;
+        alert("La suma de"+ n1 + " + " + n2 + " = "+ suma);
+    }
+    /**********************************************************************/
+    /* Login(): operador de relaccion == y op. Logico && (and)            */
+    /**********************************************************************/
+    function login(){
+        let usuario = prompt("Intriduzca su usuario");
+        let password = prompt("Introduzca contraseña");
+        if(usuario == "admin" && password == "1234"){
+            alert("Tiene acceso a la we");
+        } else {
+            alert("No tienece acceso. Credenciales no validas");
+        }
+    }
+    /********************************************************************/
+    /* doble(): funcion con argumento y devolucoin de valores           */
+    /********************************************************************/
+    function doble( n ){
+        return 2*n;
+    }
+    function calculaDoble(){
+        let num = prompt("Dime un numero");
+        alert("El doble de " + num + " es "+ doble(num));
+    }
+    /*********************************************************************/
+    /*       alineacion                                                */
+    /******************************************************************/
+    function alineacion() {
+            let alineacion = ['Benzema', 'Bale', 'Hazard', 'Asensio', 'Vinicius'];
+            let posicion = prompt("Dime posicion:")
+            alert( "En la posicion " + posicion +" juega "+alineacion[posicion]);
+
+        }
+    /******************************************************/
+    /*    sumaHasta() bucle for
+    /***************************************************/
+    function sumaHasta(){
+        let num =parseInt(prompt("Dime cuantos numeros deseas sumar"));
+        let suma= 0;
+        for( let i = 0; i< num; i++){
+            nmas = parseInt(prompt("indica el primer numero"))
+            suma = suma + nmas;
+        }
+        alert("La suma de los numeros indicados es de: "+ suma)
+
+    }
+
+</script>
+</body>
+</html>
