@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tineda de compra</title>
+    <style>
+        #lista{
+            margin: 0%;
+            border: 2px solid black ;           
+            height: 200px;
+            width: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>LISTA DE LA COMPRA</h1>
+    <label for="">Concepto: </label><input id="producto" type="text"></input>
+    <label for="">Importe: </label><input id="precio" type="text">
+    <button onclick="añadir()">Añadir</button>
+    <button onclick="limpiar()">Limpiar todo</button>
+    <br><br>
+    <div id="lista">
+
+
+    </div>
+    <h3 id="importe"></h3>
+
+    
+    
+    <script>
+        let suma = 0;
+        function añadir(){
+            let cajaproducto = document.getElementById("producto");
+            let cajaprecio = document.getElementById("precio");
+            let importe = document.getElementById("importe");
+            let caja = document.getElementById("lista");
+
+            let nombre = cajaproducto.value;
+            let precio = parseInt(cajaprecio.value);
+
+            if (!isNaN(precio) && (nombre) != ""){
+            suma = suma+precio;
+
+            caja.innerHTML += "<p>"+nombre+" ---->"+ precio+"</p>";
+            importe.innerHTML = suma;
+                } else {alert("ERROR:Ni el nombre ni el precio pueden estar vacios y el precio ha de ser un numero y no puede estar vacio")}
+        }
+        function limpiar(){
+            let caja = document.getElementById("lista");
+            document.getElementById("producto").value ="";
+            document.getElementById("precio").value="";
+            caja.innerHTML = "";
+            suma=0;
+            importe.innerHTML = suma;
+
+        }
+
+
+    </script>
+</body>
+</html>
