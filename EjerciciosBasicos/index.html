@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios Básicos</title>
     <style>
-        #ejercicio1{
+        body{background-color: bisque;
+            display: flex;
+            flex-direction: column;
+        align-items: center;
+       margin: 0;
+        }
+        
+        .ejercicio{
             border: 1px solid black;
+            width: 50%;
+            padding: 10px;
+        }
+        .msgaviso{
+            color:  red;
+            font-family: 'Arial Narrow Bold';
         }
     </style>
 </head>
@@ -15,15 +28,48 @@
 <body>
 
     <h1>Ejercicios Básicos</h1>
+    <div class="ejercicio">
+        <h2>1.Validador de Rangos</h2>
+        <h3>Indica un valor y te diremos si esta entre 10 y 20</h3>
+        <label for="text">Numero:</label> <input type="text" id="numeroRango"><br><br>
+        <button onclick="validadN()">Comprobar</button>
+        <h2 id="valorentre" class="msgaviso"></h2>
 
+    </div>
 
-    <div id="ejercicio1">
-        <h1> Buscador de nombres</h1>
-        <h3> En el listado estan los siguientes nombres</h3>
+    <div class="ejercicio">
+        <h2>2.Buscador de nombres</h2>
+        <h3>En el listado estan los siguientes nombres</h3>
         <h3>Jose, Juan, Ana, Carmen, Patricia</h3>
         <button onclick="buscarNombre()">Burcar nombres</button>
     </div>
-   
+
+    <div class="ejercicio">
+        <h2>3.Login con tres intentos</h2>
+        <label for="text">Usuario: </label><input id="usuario" type="text"></input><br>
+        <label for="text">Contraseña: </label><input id="pass" type="text"></input><br>
+        <button id="login" onclick="login()">Aceptar</button>
+        <h3 id="aviso" class="msgaviso"></h3>
+    </div>
+   <div class="ejercicio">
+        <h2>4.Acumulador</h2>
+        <p>Pulsa empezar e introduce numeros, cuando desees terminar</p>
+        <p>marca el numero 0 y te mostraré la suma de los nuemeros introducidos</p>
+        <button onclick="acumulador()"> Empezar</button>
+        <h3 id="msgacumulado" class="msgaviso"></h3>
+   </div>
+   <div class="ejercicio">
+    <h2>5.Inversor de Strings</h2>
+        <p>Indica una palabra y te la deletreo al reves</p>
+        <button onclick="inverso()">Empezar</button>
+        
+   </div>
+   <div class="ejercicio">
+    <h2>6.Numero maximo </h2>
+    <p>Pulsa el boton e indica 5 nuemros.</p>
+    <p>Al terminar te diré cual es el mayot</p>
+    <button onclick=" maximo()">Empezar</button>
+   </div>
     
     <script src="./js/scripts.js"></script>
 </body>
