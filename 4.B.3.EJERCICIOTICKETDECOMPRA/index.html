@@ -38,7 +38,7 @@
             let caja = document.getElementById("lista");
 
             let nombre = cajaproducto.value;
-            let precio = parseInt(cajaprecio.value);
+            let precio = parseFloat(cajaprecio.value);
 
             if (!isNaN(precio) && (nombre) != ""){
             suma = suma+precio;
