@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <style>
+        #formulario{
+
+            padding: 20px;
+            background: gray;
+            height: 400px;
+            width: 400px;
+            border-radius: 6px;
+         }
+         #imagen{
+            padding: 20px;
+            height: 200px;
+            width: 200px;
+
+         }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pedido</h1>
+
+    <form action="procesa.php" id="formulario" onsubmit="return enviar()">
+        <select name="Producto" id="Producto" onchange="cambiaImagen()">
+            <option value="e">Elegir Producto.....</option>
+            <option value="pc">Ordenador</option>
+            <option value="pt">Portatil</option>
+            <option value="tb">Tablet</option>
+        </select><br>
+        
+        <img id="imagen" src="" alt=""><br>
+        <label for="">Usuario: </label><input id="usuario" type="text"><br>
+        <label for="" id="lablecheck">He leido y Acepto las condiciones</label><input id="acepto" type="checkbox">
+        <br><br>
+        <input type="submit" value="Enviar Datos">
+        
+       
+    </form>
+    <h3 id="aviso"></h3>
+    <script>
+    function cambiaImagen(){
+            let Producto = document.getElementById("Producto");
+            let imagen = document.getElementById("imagen");
+            imagen.style.visibility = "visible";
+            if (Producto.value == "pc"){
+                imagen.src = "./PC.webp"
+            }
+            if (Producto.value == "pt"){
+                imagen.src = "./Portatil.jpg"
+            }
+            if (Producto.value == "tb"){
+                imagen.src = "./tablet.webp"
+            }
+            if(Producto.value == "e"){
+                imagen.src = ""
+                imagen.style.visibility = "hidden";
+            }
+        }
+        function enviar(){
+            let Producto = document.getElementById("Producto");
+            let usuario = document.getElementById("usuario");
+            let ch = document.getElementById("acepto");
+            let av = document.getElementById("aviso");
+
+            ;
+            if(ch.checked == false ){
+                av.innerHTML = "Ha de Aceptar las condiciones";
+                av.style.color = "red";
+                ch.style.outline = "2px solid red";
+                ch.focus();
+                return false;
+            }
+            if(Producto.value == "e"){
+
+                av.innerHTML = "Has de elegir un producto";
+                Producto.style.outline = "2px solid red";
+                av.style.color = "red";
+                Producto.focus();
+                return false;
+            }
+            if (!usuario.value.trim() || usuario.value.length < 5 ){
+                av.innerHTML = "Has de poner un usuario y debe de ser mayor de 5 caracteres";
+                av.style.color = "red";
+                usuario.style.outline = "2px solid red";
+                usuario.focus();
+                return false;
+            }
+            
+
+
+        }
+    </script>
+</body>
+</html>
